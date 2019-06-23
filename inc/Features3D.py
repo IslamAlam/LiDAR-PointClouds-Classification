@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.neighbors import NearestNeighbors
 from numpy import linalg as LA
+import time
 
 path_data = os.getcwd()
 
@@ -21,17 +22,53 @@ class point_class(object):
     def __init__ (self):
         print("Inicialization")
         
+        
+    
+        
     def import_data(self, fileName):
-        data = pd.read_csv(fileName,sep="\t", header = None)
-        data.columns=["x","y","z","r","g","b","Q"]
-        X= np.array(data.x)
-        Y= np.array(data.y)
-        Z= np.array(data.z)
-        R= np.array(data.r)
-        G= np.array(data.g)
-        B= np.array(data.b)
-        Q= np.array(data.Q)
-        return X,Y,Z,R,G,B,Q
+        import pdal
+        import json
+        # X= np.array(data.x)
+        # Y= np.array(data.y)
+        # Z= np.array(data.z)
+        # R= np.array(data.r)
+        # G= np.array(data.g)
+        # B= np.array(data.b)
+        # Q= np.array(data.Q)
+        
+        inputfile = str(fileName)
+        pipe_LASreader =\
+        {
+          "pipeline":[
+            {
+              "type":"readers.las",
+              "filename":inputfile,
+              "use_eb_vlr": "true"
+            }
+          ]
+        }
+        # """%lasinput
+        #print(pipe_reader)
+
+        pipeline = pdal.Pipeline(json.dumps(pipe_LASreader))
+        pipeline.validate()
+        print(pipeline.validate())
+        # n_points = pipeline.execute()
+        #%time 
+        start_time = time.time()
+        n_points = pipeline.execute()
+        elapsed_time_fl = (time.time() - start_time)
+        print('Time taken ', elapsed_time_fl,' seconds')
+
+        lidar_df = pd.DataFrame(pipeline.arrays[0])
+        print("Number of points in LiDAR:", n_points)
+        #print(lidar_df)
+        lidar_df.head()
+        
+        # data = pd.read_csv(fileName,sep="\t", header = None)
+        # data.columns=["X","Y","z","r","g","b","Q"]
+        return lidar_df
+        # return X,Y,Z,R,G,B,Q
     
     def optNESS(self, X,Y,Z,kmin,deltaK,kmax):
         XYZ = np.array([X,Y,Z]).T
