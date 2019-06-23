@@ -7,7 +7,7 @@ import json
 import pdal
 
 
-def las_2_df(las_path):
+def las_2_dataframe(las_path):
     pipe_LASreader =\
     {
       "pipeline":[

@@ -101,7 +101,7 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     return ax
 
 
-def classic_classifier(method, raster_data_path, train_data_path, validation_data_path, output_fname):
+def classic_classifier(method, X, y):
     """
     try:
         raster_dataset = xr.open_rasterio(raster_data_path)
@@ -119,14 +119,18 @@ def classic_classifier(method, raster_data_path, train_data_path, validation_dat
 
     logger.debug("Process the training data")\
     """
+    
+    from sklearn.model_selection import train_test_split
+    
     # create a dataframe from each pixel and its label
-    df_labeled_pixels = sample_vectors_to_raster(train_data_path, raster_dataset)
-    X_train, y_train = dataframe_to_features(df_labeled_pixels)
-    n_class = y_train.unique()
+    # df_labeled_pixels = sample_vectors_to_raster(train_data_path, raster_dataset)
 
     # Create dataframe each pixel of the image 
-    X_predict = dataframe_to_features(df_raster)
+    # X_predict = dataframe_to_features(df_raster)
     
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, stratify=y)
+    n_class = y_train.unique()
+
     #
     # Perform classification
     #
@@ -150,37 +154,36 @@ def classic_classifier(method, raster_data_path, train_data_path, validation_dat
     classifier = CLASSIFIERS[method]
     logger.debug("Train the classifier: %s", str(classifier))
     classifier.fit(X_train, y_train)
-
-    logger.debug("Classifing...")
-    result = classifier.predict(X_predict)
-
-    # Reshape the result: split the labeled pixels into rows to create an image
-    # need to figure out what is wrong with writegeotiff
-    #classification = result.reshape((rows, cols))
-    #write_geotiff(output_fname, n_class, classification, geo_transform, proj)
-    #logger.info("Classification created: %s", output_fname)
-
+    
     #
     # Validate the results
     #
-    if validation_data_path:
-        logger.debug("Process the verification (testing) data")
-        try:
-            df_validation_pixels = sample_vectors_to_raster(validation_data_path, raster_dataset)
-            X_test, y_test = dataframe_to_features(df_validation_pixels)
+    logger.debug("Process the verification (testing) data")
+    try:
+        df_validation_pixels = sample_vectors_to_raster(validation_data_path, raster_dataset)
+        X_test, y_test = dataframe_to_features(df_validation_pixels)
 
-        except OSError.FileNotFoundError as e:
-            report_and_exit(str(e))
+    except OSError.FileNotFoundError as e:
+        report_and_exit(str(e))
+    
+    logger.debug("Classifing...")
+    y_predicted = classifier.predict(X_test)
 
-        y_predicted = classifier.predict(X_test)
-
-        logger.info("Confussion matrix:\n%s", str(
-            metrics.confusion_matrix(y_test, y_predicted)))
-        target_names = ['Class %s' % s for s in n_class]
-        logger.info("Classification report:\n%s",
-                    metrics.classification_report(y_test, y_predicted,
-                                                  target_names=target_names))
-        logger.info("Classification accuracy: %f",
-                    metrics.accuracy_score(y_test, y_predicted))
-        
-        return y_test, y_predicted, classification
+    logger.info("Confussion matrix:\n%s", str(
+        metrics.confusion_matrix(y_test, y_predicted)))
+    target_names = ['Class %s' % s for s in n_class]
+    logger.info("Classification report:\n%s",
+                metrics.classification_report(y_test, y_predicted,
+                                                target_names=target_names))
+    logger.info("Classification accuracy: %f",
+                metrics.accuracy_score(y_test, y_predicted))
+    
+    print("Classification report:\n%s",
+                metrics.classification_report(y_test, y_predicted,
+                                                target_names=target_names))
+    print("Classification accuracy: %f",
+                metrics.accuracy_score(y_test, y_predicted))
+    plot_confusion_matrix(y_true, y_pred, classes) 
+    
+    
+    return classifier, y_test, y_predicted
