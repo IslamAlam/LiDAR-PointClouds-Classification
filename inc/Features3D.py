@@ -16,6 +16,13 @@ from sklearn.neighbors import NearestNeighbors
 from numpy import linalg as LA
 import time
 
+import logging
+logger = logging.getLogger(__name__)
+
+import dask.distributed
+import dask.array as da
+
+
 path_data = os.getcwd()
 
 class point_class(object):

@@ -19,6 +19,12 @@ from numpy import linalg as LA
 
 import numpy as np
 
+import logging
+logger = logging.getLogger(__name__)
+
+import dask.distributed
+
+
 def multiply_z(ins,outs):
     Z = ins['Z']
     Z = Z * 10.0
