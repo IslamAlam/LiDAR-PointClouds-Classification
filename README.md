@@ -24,8 +24,9 @@ Helpfull Repo:
 2. [point-cloud-processing](https://github.com/rockestate/point-cloud-processing)
 3. [Risk_Detection_UI](https://github.com/HaroldMurcia/Risk_Detection_UI/)
 4. [Dissertation](https://github.com/NoemiRoecklinger/dissertation/blob/5e235617296910075af3444fc3edc3ea589c1843/4_CreateAllFeatures_subset1000.ipynb)
-
-
+5. [Custom python filters for pdal](https://github.com/ArcticSnow/photo4D/blob/5c76c0256e54ad80c2f4cac96827e43f7ba214d8/build/lib/photo4d/pdal_python_filter.py)
+6. [Class and functions to process the point clouds](https://github.com/ArcticSnow/photo4D/blob/master/photo4d/Class_pcl_processing.py)
+7. [Features3D](https://github.com/HaroldMurcia/Risk_Detection_UI/blob/ad03ec6baf9a789f3fe889895cfb665134818ac9/Dev_Python/Risk_Detection/Features3D.py)
 
 
 

@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix
 
 import xarray as xr
-import xgeo # Needs to be imported to use geo extension
+# import xgeo # Needs to be imported to use geo extension
 
 import geopandas as gpd
 import gdal
