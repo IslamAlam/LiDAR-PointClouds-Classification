@@ -39,3 +39,8 @@ Thumbs.db
 # JupyterNotebook checkpoints #
 ###############################
 *-checkpoint.*
+
+
+# Python Cache #
+################
+*/__pycache__/*
