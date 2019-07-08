@@ -4,24 +4,17 @@
 
 ## 3D Matching of TerraSAR-X Derived Ground Control Points to Mobile Mapping Data
 
-
- ![](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
-
-<figure class="csc-textpic-image csc-textpic-last">
- 
-
-<figcaption class="csc-textpic-caption">Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
- Source: Airbus Defence and Space, ZF</figcaption>
-
-</figure>
-
-
-
-
 *   Sponsored by: [Airbus Defence and Space GmbH, Friedrichshafen](/index.php?id=41&L=0#c692)
 *   Project Lead: Dr. Ricardo Acevedo Cabra
 *   Scientific Lead: [Dr. Wolfgang Koppe](mailto:wolfgang.koppe@airbus.com "Opens window for sending email") (Phone: 07545/8-4226) and [Tatjana Bürgmann](mailto:tatjana.buergmann@airbus.com "Opens window for sending email") (07545/8-1431)
 *   Term: Summer semester 2019
+
+
+ ![Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
+ Source: Airbus Defence and Space, ZF](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
+ 
+ *Fig. 1: Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
+ Source: Airbus Defence and Space, ZF*
 
 
 Radar imaging satellites like TerraSAR-X are able to acquire images having very high absolute geo-location accuracy, due the availability of precise orbit information. By using multiple stereo images in a radargrammetric process, so-called Ground Control Points (GCPs) can be extracted. GCPs are precisely measured land marks given the exact position on the earth. These GCPs are derived from pole-like structures along the road e.g. street lights, signs or traffic lights, since these objects are having a high backscatter in the radar image and therefore being easily identifiable in multiple images. By using a stack of multiple TerraSAR-X images, a dense point cloud of GCPs having an accuracy of less than 10 centimeters can be automatically extracted.
