@@ -2,7 +2,31 @@
 
 
 
+## 3D Matching of TerraSAR-X Derived Ground Control Points to Mobile Mapping Data
 
+
+
+<figure class="csc-textpic-image csc-textpic-last">![](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
+
+<figcaption class="csc-textpic-caption">Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
+ Source: Airbus Defence and Space, ZF</figcaption>
+
+</figure>
+
+
+
+
+*   Sponsored by: [Airbus Defence and Space GmbH, Friedrichshafen](/index.php?id=41&L=0#c692)
+*   Project Lead: Dr. Ricardo Acevedo Cabra
+*   Scientific Lead: [Dr. Wolfgang Koppe](mailto:wolfgang.koppe@airbus.com "Opens window for sending email") (Phone: 07545/8-4226) and [Tatjana Bürgmann](mailto:tatjana.buergmann@airbus.com "Opens window for sending email") (07545/8-1431)
+*   Term: Summer semester 2019
+
+
+Radar imaging satellites like TerraSAR-X are able to acquire images having very high absolute geo-location accuracy, due the availability of precise orbit information. By using multiple stereo images in a radargrammetric process, so-called Ground Control Points (GCPs) can be extracted. GCPs are precisely measured land marks given the exact position on the earth. These GCPs are derived from pole-like structures along the road e.g. street lights, signs or traffic lights, since these objects are having a high backscatter in the radar image and therefore being easily identifiable in multiple images. By using a stack of multiple TerraSAR-X images, a dense point cloud of GCPs having an accuracy of less than 10 centimeters can be automatically extracted.
+
+However, in order to make use of this high positional accuracy for the use case of autonomous driving, the link between landmarks like street lights identified from mobile mapping data and the coordinates of the respective GCP needs to be established. The goal of this project is to find and implement an algorithm for the automatic matching of 3D point clouds from GCPs extracted by radar space geodesy and in-situ LIDAR mobile mapping data derived from a car acquisition. A precise matching process would enable the generation of an accurate data basis as indispensable basis for highly automated and autonomous driving.
+
+The particular tasks involve an initial literature study to gather possible approaches and solutions, performing a feasibility analysis of these approaches, the implementation of one or possibly two different approaches, and the evaluation of the developed method compared to a baseline method.
 
 
 
