@@ -5,8 +5,10 @@
 ## 3D Matching of TerraSAR-X Derived Ground Control Points to Mobile Mapping Data
 
 
+ ![](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
 
-<figure class="csc-textpic-image csc-textpic-last">![](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
+<figure class="csc-textpic-image csc-textpic-last">
+ 
 
 <figcaption class="csc-textpic-caption">Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
  Source: Airbus Defence and Space, ZF</figcaption>
