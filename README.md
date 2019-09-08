@@ -6,7 +6,7 @@
 
 *   Sponsored by: [Airbus Defence and Space GmbH, Friedrichshafen](/index.php?id=41&L=0#c692)
 *   Project Lead: Dr. Ricardo Acevedo Cabra
-*   Scientific Lead: [Dr. Wolfgang Koppe](mailto:wolfgang.koppe@airbus.com "Opens window for sending email") (Phone: 07545/8-4226) and [Tatjana Bürgmann](mailto:tatjana.buergmann@airbus.com "Opens window for sending email") (07545/8-1431)
+*   Scientific Lead: [Dr. Wolfgang Koppe](mailto:wolfgang.koppe@airbus.com "Opens window for sending email")  and [Tatjana Bürgmann](mailto:tatjana.buergmann@airbus.com "Opens window for sending email")
 *   Term: Summer semester 2019
 
 
