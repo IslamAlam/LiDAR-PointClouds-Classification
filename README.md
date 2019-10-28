@@ -10,7 +10,7 @@
 *   Scientific Lead: [Dr. Wolfgang Koppe](mailto:wolfgang.koppe@airbus.com "Opens window for sending email")  and [Tatjana Bürgmann](mailto:tatjana.buergmann@airbus.com "Opens window for sending email")
 *   Term: Summer semester 2019
 
-**Results** of this project are explained in detail in the final [documentation](/fileadmin/w00byz/www/Airbus_-_TUM-DI-LAB_Final_Documentation_SS19.pdf "Initiates file download") and [presentation](/fileadmin/w00byz/www/Airbus_Final_Presentation_SS19.pdf "Initiates file download").
+**Results** of this project are explained in detail in the final [documentation](https://www.di-lab.tum.de/fileadmin/w00byz/www/Airbus_-_TUM-DI-LAB_Final_Documentation_SS19.pdf "Initiates file download") and [presentation](https://www.di-lab.tum.de/fileadmin/w00byz/www/Airbus_Final_Presentation_SS19.pdf "Initiates file download").
 
  ![Classified in-situ Lidar data, overlayed by TerraSAR-X derived GCPs (red points)  
  Source: Airbus Defence and Space, ZF](/img/csm_Airbus_SS2019_Project_image_649e058fda.png)
